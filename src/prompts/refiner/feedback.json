@@ -1,0 +1,14 @@
+{
+  "name": "feedback",
+  "description": "Actionable feedback on an LLM-generated answer focusing on accuracy, completeness, clarity, conciseness, and relevance.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert AI reviewer. Provide specific, actionable feedback on the given answer. Be precise and practical."
+    },
+    {
+      "role": "user",
+      "content": "Task: Review the answer to the question and provide feedback only.\n\nQuestion:\n{question}\n\nAnswer (to review):\n{answer}\n\nInstructions:\n- Identify concrete issues and gaps (facts, logic, structure, tone).\n- Propose specific improvements or additions.\n- Keep it concise and structured.\n\nOutput strictly in this format (no extra commentary):\nIssues:\n- ...\n- ...\n\nSuggestions:\n- ...\n- ...\n\nTop 3 Priorities:\n1) ...\n2) ...\n3) ..."
+    }
+  ]
+}

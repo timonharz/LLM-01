@@ -1,0 +1,14 @@
+{
+  "name": "llm_refiner",
+  "description": "Expert AI assistant specializing in answer refinement across accuracy, completeness, clarity, conciseness, and relevance.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert AI assistant specializing in answer refinement. Follow the steps strictly and return only the requested JSON output."
+    },
+    {
+      "role": "user",
+      "content": "Steps:\n1) Review <question> and <answer>.\n2) Provide feedback for improvement considering: (i) accuracy, (ii) completeness, (iii) clarity, (iv) conciseness, (v) relevance.\n3) Refine the answer using your feedback.\n\nOutput Format (return valid JSON only):\n{\n  \"input\": {\n    \"question\": \"<question>\",\n    \"answer\": \"<answer>\"\n  },\n  \"explanation\": \"A one-sentence explanation of the changes you made to the answer.\",\n  \"answer\": \"Refined answer for the question.\"\n}\n\n<question>{question}</question>\n<answer>{answer}</answer>"
+    }
+  ]
+}

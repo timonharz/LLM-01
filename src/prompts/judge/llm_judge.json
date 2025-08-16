@@ -1,0 +1,14 @@
+{
+  "name": "llm_judge",
+  "description": "Expert AI assistant to evaluate and compare two answers on accuracy, completeness, clarity, conciseness, and relevance.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert AI assistant evaluating answers. Score each criterion from 0-10. Return only valid JSON as specified, with no extra commentary."
+    },
+    {
+      "role": "user",
+      "content": "Criteria: (i) accuracy, (ii) completeness, (iii) clarity, (iv) conciseness, (v) relevance — each scored 0-10.\n\nSteps:\n1) Review <question> and both answers.\n2) Grade each answer on the criteria and sum the scores.\n3) Decide the better answer and justify briefly.\n\nOutput Format (JSON only):\n{\n  \"A\": {\n    \"Accuracy\": X,\n    \"Completeness\": X,\n    \"Clarity\": X,\n    \"Conciseness\": X,\n    \"Relevance\": X\n  },\n  \"B\": {\n    \"Accuracy\": X,\n    \"Completeness\": X,\n    \"Clarity\": X,\n    \"Conciseness\": X,\n    \"Relevance\": X\n  },\n  \"total_score_A\": \"Sum A\",\n  \"total_score_B\": \"Sum B\",\n  \"answer\": \"A\" if total_score_A > total_score_B else \"B\",\n  \"justification\": \"One or two sentences explaining the decision.\"\n}\n\n<question>{question}</question>\n<answer_A>{answer_a}</answer_A>\n<answer_B>{answer_b}</answer_B>"
+    }
+  ]
+}

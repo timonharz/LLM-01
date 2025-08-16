@@ -1,0 +1,14 @@
+{
+  "name": "apply_feedback",
+  "description": "Refine a prior answer by applying provided feedback and priorities, preserving correctness and improving quality.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert editor. Improve the answer strictly by applying the feedback. Maintain accuracy and do not invent facts."
+    },
+    {
+      "role": "user",
+      "content": "Question:\n{question}\n\nPrior Answer:\n{answer}\n\nFeedback to Apply:\n{feedback}\n\nInstructions:\n- Apply the feedback faithfully, prioritizing the top items if provided.\n- Keep the answer concise, correct, and well-structured.\n- Return only the refined answer, with no additional commentary."
+    }
+  ]
+}

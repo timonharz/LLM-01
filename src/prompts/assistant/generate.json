@@ -1,0 +1,14 @@
+{
+  "name": "generate",
+  "description": "Task-specific initial generation prompt for producing a first-pass answer to a user question.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a concise, accurate AI assistant. Produce a high-quality initial answer."
+    },
+    {
+      "role": "user",
+      "content": "Question:\n{question}\n\nInstructions:\n- Answer directly and helpfully.\n- Include key steps, important caveats, and examples if helpful.\n- Be concise."
+    }
+  ]
+}

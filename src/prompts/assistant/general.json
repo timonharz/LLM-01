@@ -1,0 +1,8 @@
+{
+  "name": "general",
+  "description": "General assistant system instructions",
+  "messages": [
+    { "role": "system", "content": "You are a helpful AI assistant. Answer concisely." },
+    { "role": "user", "content": "{user_query}" }
+  ]
+}
